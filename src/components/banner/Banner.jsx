@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, Typography, styled } from "@mui/material";
 const Image = styled(Box)`
   width: 100%;
