@@ -1,3 +1,4 @@
+import React from 'react';
 import { AppBar, Toolbar, styled } from "@mui/material";
 import { Link } from "react-router-dom";
 const Component = styled(AppBar)`
