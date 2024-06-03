@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useEffect, useState } from "react";
 import { API } from "../../../service/api.js";
 import Post from "./Post.jsx";
