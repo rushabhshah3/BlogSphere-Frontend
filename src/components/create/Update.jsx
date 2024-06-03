@@ -85,7 +85,7 @@ const Update = () => {
     getImage();
     post.categories = searchParams.get("category") || "All";
     post.username = account.username;
-  }, [file]);
+  }, [file,account.username, post, searchParams]);
   const updateBlogPost = async () => {
     try {
       let response = await API.updatePost(post);
