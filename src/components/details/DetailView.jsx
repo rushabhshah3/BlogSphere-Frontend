@@ -73,7 +73,7 @@ const DetailView = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   const deleteBlog = async () => {
     await API.deletePost(post._id);
