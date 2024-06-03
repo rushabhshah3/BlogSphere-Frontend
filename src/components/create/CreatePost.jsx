@@ -75,7 +75,7 @@ const CreatePost = () => {
     getImage();
     post.categories = searchParams.get("category") || "All";
     post.username = account.username;
-  }, [file]);
+  }, [file,account.username, post,searchParams]);
   const savePost = async () => {
     await API.createPost(post);
     navigate("/");
