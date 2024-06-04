@@ -27,7 +27,7 @@ const Wrapper = styled(Box)`
   }
 `;
 const LoginButton = styled(Button)`
-  background-color: #fb641f;
+  background-color: rgba(0,0,150,0.8);
   color: #fff;
   text-transform: none;
   border-radius: 2px;
