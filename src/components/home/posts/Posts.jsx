@@ -40,7 +40,7 @@ export const Posts = () => {
         </Grid>
       ) : (
         <div style={{ color: "#676767", margin: "30px", fontSize: "20px" }}>
-          No posts founds
+          No posts found
         </div>
       )}
     </>
