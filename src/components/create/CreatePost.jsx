@@ -78,7 +78,7 @@ const CreatePost = () => {
   });
   const savePost = async () => {
     await API.createPost(post);
-    // navigate("/");
+    navigate("/");
   };
   return (
     <Container>
