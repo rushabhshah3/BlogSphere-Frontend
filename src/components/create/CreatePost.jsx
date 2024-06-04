@@ -78,7 +78,7 @@ const CreatePost = () => {
   }, [file,account.username, post,searchParams]);
   const savePost = async () => {
     await API.createPost(post);
-    navigate("/");
+    // navigate("/");
   };
   return (
     <Container>
