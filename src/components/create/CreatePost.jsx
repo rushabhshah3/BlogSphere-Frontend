@@ -64,7 +64,7 @@ const CreatePost = () => {
   useEffect(()=>{
     post.categories = searchParams.get("category") || "All";
     post.username = account.username;
-  },[]);
+  },[searchParams,post.categories,account.username,post.username]);
   useEffect(() => {
     const getImage = async () => {
       if (file) {
