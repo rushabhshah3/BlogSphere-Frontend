@@ -73,7 +73,7 @@ const CreatePost = () => {
         data.append("file", file);
         //API Call
         let response = await API.uploadFile(data);
-        setPost({ ...post, picture: response.data });
+        setPost((prevPost) => ({ ...prevPost, picture: response.data }));
       }
     };
     getImage();
