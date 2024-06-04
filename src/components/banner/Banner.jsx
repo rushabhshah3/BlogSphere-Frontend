@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, styled } from "@mui/material";
 const Image = styled(Box)`
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   background: url("https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg")
     center/100% repeat-x #000;
   display: flex;
@@ -24,7 +24,7 @@ const Subheading = styled(Typography)`
 const Banner = () => {
   return (
     <Image>
-      <Heading>BLOG</Heading>
+      <Heading>BLOGOSPHERE</Heading>
       <Subheading>Share the Unshared: Your Thoughts Matters too !</Subheading>
     </Image>
   );
