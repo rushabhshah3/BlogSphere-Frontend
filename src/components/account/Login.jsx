@@ -100,7 +100,6 @@ const Login = ({ setIsAuthenticated }) => {
         username: response.data.username,
         name: response.data.name,
       });
-      console.log("setIsAuthenticated", setIsAuthenticated);
       setIsAuthenticated(true);
       navigate("/");
     } else {
