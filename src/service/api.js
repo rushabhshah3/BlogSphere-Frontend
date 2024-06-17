@@ -9,6 +9,7 @@ const axiosInstance = axios.create({
 });
 axiosInstance.interceptors.request.use(
   function (config) {
+    config.headers["authorization"] = getAccessToken();
     if (config.TYPE.params) {
       config.params = config.TYPE.params;
     } else if (config.TYPE.query) {
@@ -57,6 +58,11 @@ const processError = async (error) => {
   if (error.response) {
     // Request made and server responded with a status code
     // that falls out of the range of 2xx
+    if (error.response.data.clearToken) {
+      sessionStorage.clear();
+      alert("Please login again!);
+      window.location.href = "";
+    }
     console.log("ERROR IN RESPONSE", error);
     return {
       isError: "true",
