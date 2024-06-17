@@ -61,7 +61,7 @@ const processError = async (error) => {
     if (error.response.data.clearToken) {
       sessionStorage.clear();
       alert("Please login again!");
-      window.location.href = "";
+      window.location.href = "/login";
     }
     console.log("ERROR IN RESPONSE", error);
     return {
