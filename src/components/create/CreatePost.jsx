@@ -79,6 +79,10 @@ const CreatePost = () => {
     getImage();
   },[file]);
   const savePost = async () => {
+    if(post.title=="" || post.description==""){
+      alert("Either title or description is empty");
+      return;
+    }
     await API.createPost(post);
     navigate("/");
   };
@@ -98,7 +102,7 @@ const CreatePost = () => {
           style={{ display: "none" }}
         />
         <InputTextField
-          placeholder="Hello"
+          placeholder="Blog Title"
           onChange={(e) => handleChange(e)}
           name="title"
         ></InputTextField>
@@ -108,7 +112,7 @@ const CreatePost = () => {
       </StyledFormControl>
       <TextArea
         minRows={6}
-        placeholder="Share your story..."
+        placeholder="Share your ideas..."
         onChange={(e) => handleChange(e)}
         name="description"
       ></TextArea>
