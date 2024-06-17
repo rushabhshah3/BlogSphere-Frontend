@@ -9,8 +9,8 @@ import {
   Outlet,
 } from "react-router-dom";
 //components
-import Logout from "./components/accounts/Logout";
 import Login from "./components/account/Login";
+import Logout from "./components/accounts/Logout";
 import DataProvider from "./context/DataProvider";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
