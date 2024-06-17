@@ -9,6 +9,7 @@ import {
   Outlet,
 } from "react-router-dom";
 //components
+import Logout from "./components/accounts/Logout";
 import Login from "./components/account/Login";
 import DataProvider from "./context/DataProvider";
 import Header from "./components/header/Header";
@@ -37,6 +38,10 @@ function App() {
               <Route
                 path="/login"
                 element={<Login setIsAuthenticated={setIsAuthenticated} />}
+              />
+              <Route
+                path="/logout"
+                element={<Logout setIsAuthenticated={setIsAuthenticated} />}
               />
               <Route
                 path="/"
