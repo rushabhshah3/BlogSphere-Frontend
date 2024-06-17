@@ -60,7 +60,7 @@ const processError = async (error) => {
     // that falls out of the range of 2xx
     if (error.response.data.clearToken) {
       sessionStorage.clear();
-      alert("Please login again!);
+      alert("Please login again!");
       window.location.href = "";
     }
     console.log("ERROR IN RESPONSE", error);
