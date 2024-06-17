@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 //components
 import Login from "./components/account/Login";
-import Logout from "./components/accounts/Logout";
+import Logout from "./components/account/Logout";
 import DataProvider from "./context/DataProvider";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
