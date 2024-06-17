@@ -79,7 +79,7 @@ const CreatePost = () => {
     getImage();
   },[file]);
   const savePost = async () => {
-    if(post.title=="" || post.description==""){
+    if(post.title==="" || post.description===""){
       alert("Either title or description is empty");
       return;
     }
