@@ -33,7 +33,7 @@ function App() {
     <>
       <DataProvider>
         <BrowserRouter>
-          <div style={{ marginTop: "100px" }}>
+          <div style={{ marginTop: "4rem" }}>
             <Routes>
               <Route
                 path="/login"
