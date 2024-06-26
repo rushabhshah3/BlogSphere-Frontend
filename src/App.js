@@ -44,6 +44,12 @@ function App() {
                 element={<Logout setIsAuthenticated={setIsAuthenticated} />}
               />
               <Route
+                path="/about"
+                element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+              >
+                <Route path="/about" element={<About />} />
+              </Route>
+              <Route
                 path="/"
                 element={<PrivateRoute isAuthenticated={isAuthenticated} />}
               >
