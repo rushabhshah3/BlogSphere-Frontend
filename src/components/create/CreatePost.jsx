@@ -1,19 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Box,
-  Button,
-  FormControl,
-  InputBase,
-  TextareaAutosize,
-  styled,
-} from "@mui/material";
+import { Box, Button, FormControl, InputBase, styled } from "@mui/material";
 import { AddCircle as Add } from "@mui/icons-material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
 import { API } from "../../service/api";
 import { useContext, useEffect, useState } from "react";
-
+import Quill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 const Image = styled("img")({
   width: "100%",
   height: "60vh",
@@ -35,12 +29,12 @@ const InputTextField = styled(InputBase)`
   margin: 0 30px;
   font-size: 25px;
 `;
-const TextArea = styled(TextareaAutosize)`
-  width: 100%;
-  margin-top: 15px;
-  font-size: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-`;
+// const TextArea = styled(TextareaAutosize)`
+//   width: 100%;
+//   margin-top: 15px;
+//   font-size: 18px;
+//   border: 1px solid rgba(0, 0, 0, 0.5);
+// `;
 const intialPostVal = {
   title: "",
   description: "",
@@ -50,21 +44,39 @@ const intialPostVal = {
   createdDate: new Date(),
 };
 const CreatePost = () => {
+  let postDescValue = "";
   const navigate = useNavigate();
   const { account } = useContext(DataContext);
   const [searchParams] = useSearchParams();
   const [post, setPost] = useState(intialPostVal);
   const [file, setFile] = useState("");
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, 4, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link"],
+      ["clean"],
+    ],
+  };
   const handleChange = (e) => {
     setPost({ ...post, [e.target.name]: e.target.value });
+  };
+  const handlePostDescription = (e) => {
+    postDescValue = e;
   };
   const url = post.picture
     ? post.picture
     : "https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80";
-  useEffect(()=>{
+  useEffect(() => {
     post.categories = searchParams.get("category") || "All";
     post.username = account.username;
-  },[searchParams,post.categories,account.username,post.username]);
+  }, [searchParams, post.categories, account.username, post.username]);
   useEffect(() => {
     const getImage = async () => {
       if (file) {
@@ -77,9 +89,11 @@ const CreatePost = () => {
       }
     };
     getImage();
-  },[file]);
+  }, [file]);
   const savePost = async () => {
-    if(post.title==="" || post.description===""){
+    post.description = postDescValue;
+    console.log("Value of post description", post.description);
+    if (post.title === "" || post.description === "") {
       alert("Either title or description is empty");
       return;
     }
@@ -110,12 +124,19 @@ const CreatePost = () => {
           Publish
         </Button>
       </StyledFormControl>
-      <TextArea
+      {/* <TextArea
         minRows={6}
         placeholder="Share your ideas..."
         onChange={(e) => handleChange(e)}
         name="description"
-      ></TextArea>
+      ></TextArea> */}
+      <Quill
+        placeholder="Blog Description..."
+        className="description"
+        onChange={(e) => handlePostDescription(e)}
+        modules={modules}
+        style={{ height: "9.5rem", marginTop: "1rem" }}
+      />
     </Container>
   );
 };
