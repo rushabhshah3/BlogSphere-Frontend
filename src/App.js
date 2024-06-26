@@ -17,7 +17,7 @@ import Home from "./components/home/Home";
 import CreatePost from "./components/create/CreatePost";
 import DetailView from "./components/details/DetailView";
 import Update from "./components/create/Update";
-import About from "./components/accounts/About";
+import About from "./components/account/About";
 const PrivateRoute = ({ isAuthenticated, ...props }) => {
   return isAuthenticated ? (
     <>
