@@ -1,7 +1,8 @@
 import axios from "axios";
 import { API_NOTIFICATION_MESSAGES, SERVICE_CALL } from "../constants/config";
 import { getAccessToken, getType } from "../utils/common-utils";
-const API_URL = "https://blogsphere-backend-5s0l.onrender.com";
+const API_URL = "https://blogosphere-a045086f7c4d.herokuapp.com";
+// const API_URL = "https://blogsphere-backend-5s0l.onrender.com";
 const axiosInstance = axios.create({
   baseURL: API_URL,
   timeout: 10000,
