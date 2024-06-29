@@ -74,7 +74,6 @@ const Login = ({ setIsAuthenticated }) => {
   const signupUser = async () => {
     try {
       let response = await API.userSignup(signup);
-      console.log("Response from server", response);
       if (response.isSuccess) {
         setError("");
         setSignUp(signupInitialVal);
@@ -86,7 +85,13 @@ const Login = ({ setIsAuthenticated }) => {
   };
   const loginUser = async () => {
     let response = await API.userLogin(login);
-    if (response.isSuccess) {
+    if (
+      response.data.validPassword !== undefined &&
+      !response.data.validPassword
+    ) {
+      setError("Password is not valid");
+      return;
+    }else if (response.isSuccess) {
       setError("");
       sessionStorage.setItem(
         "accessToken",
@@ -124,6 +129,9 @@ const Login = ({ setIsAuthenticated }) => {
               onChange={(e) => onValueChange(e)}
               label="Enter password"
             />
+            {error === "Password is not valid" && (
+              <div style={{ color: "Red", marginTop: 0 }}>{error}</div>
+            )}
             <LoginButton variant="contained" onClick={() => loginUser()}>
               Login
             </LoginButton>
