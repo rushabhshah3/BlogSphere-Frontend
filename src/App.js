@@ -50,7 +50,12 @@ function App() {
               >
                 <Route path="/about" element={<About />} />
               </Route>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+              >
+                <Route path="/" element={<Home />} />
+              </Route>
               <Route
                 path="/create"
                 element={<PrivateRoute isAuthenticated={isAuthenticated} />}
