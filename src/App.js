@@ -36,6 +36,7 @@ function App() {
         <BrowserRouter>
           <div style={{ marginTop: "4rem" }}>
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route
                 path="/login"
                 element={<Login setIsAuthenticated={setIsAuthenticated} />}
@@ -50,7 +51,12 @@ function App() {
               >
                 <Route path="/about" element={<About />} />
               </Route>
-              <Route path="/" element={<Home />} />
+               <Route
+                path="/"
+                element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+              >
+                <Route path="/" element={<Home />} />
+              </Route>   
               <Route
                 path="/create"
                 element={<PrivateRoute isAuthenticated={isAuthenticated} />}
