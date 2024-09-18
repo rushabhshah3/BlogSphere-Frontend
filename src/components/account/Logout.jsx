@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Logout = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
   useEffect(() => {
-    sessionStorage.clear();
+    localStorage.clear();
     setIsAuthenticated(false);
     setTimeout(() => navigate("/"), 3000);
   }, [navigate, setIsAuthenticated]);
