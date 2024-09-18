@@ -53,8 +53,10 @@ const Update = () => {
   const [file, setFile] = useState("");
   const modules = {
     toolbar: [
+      [{ font: [] }],
       [{ header: [1, 2, 3, 4, false] }],
       ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ color: [] }, { background: [] }],
       [
         { list: "ordered" },
         { list: "bullet" },
