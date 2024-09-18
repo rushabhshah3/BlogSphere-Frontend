@@ -45,7 +45,10 @@ const Post = ({ post }) => {
     : "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80";
 
   const addEllipsis = (str, limit) => {
-    return str.length > limit ? str.substring(0, limit) + "..." : str;
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = str;
+    const plainText = tempDiv.innerText || tempDiv.textContent;
+    return str.length > limit ? plainText.substring(0, limit) + "..." : str;
   };
 
   return (
@@ -55,11 +58,9 @@ const Post = ({ post }) => {
       <Heading>{addEllipsis(post.title, 20)}</Heading>
       <Text>Author: {post.username}</Text>
       <Details>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: addEllipsis(post.description, 100),
-          }}
-        ></div>
+        <div style={{ overflow: "hidden" }}>
+          {addEllipsis(post.description, 150)}
+        </div>
       </Details>
     </Container>
   );
