@@ -1,17 +1,17 @@
 export const getAccessToken = () => {
-  return sessionStorage.getItem("accessToken");
+  return localStorage.getItem("accessToken");
 };
 
 export const getRefreshToken = () => {
-  return sessionStorage.getItem("refreshToken");
+  return localStorage.getItem("refreshToken");
 };
 
 export const setAccessToken = (accessToken) => {
-  sessionStorage.setItem("accessToken", `Bearer ${accessToken}`);
+  localStorage.setItem("accessToken", `Bearer ${accessToken}`);
 };
 
 export const setRefreshToken = (refreshToken) => {
-  sessionStorage.setItem("refreshToken", `Bearer ${refreshToken}`);
+  localStorage.setItem("refreshToken", `Bearer ${refreshToken}`);
 };
 
 export const getType = (value, body) => {
