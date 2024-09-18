@@ -7,19 +7,28 @@ import { Grid } from "@mui/material";
 import { Link, useSearchParams } from "react-router-dom";
 export const Posts = () => {
   const [posts, getPosts] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       let response = await API.getAllPosts({ category: category || "" });
       if (response.isSuccess) {
         getPosts(response.data);
       }
+      setLoading(false);
     };
     fetchData();
   }, [category]);
+  if (loading)
+    return (
+      <div
+        className="loader"
+        style={{ margin: "auto", marginTop: "25px" }}
+      ></div>
+    );
   return (
     <>
       {" "}
