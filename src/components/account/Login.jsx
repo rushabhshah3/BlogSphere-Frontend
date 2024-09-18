@@ -93,11 +93,11 @@ const Login = ({ setIsAuthenticated }) => {
       return;
     }else if (response.isSuccess) {
       setError("");
-      sessionStorage.setItem(
+      localStorage.setItem(
         "accessToken",
         `Bearer ${response.data.accessToken}`
       );
-      sessionStorage.setItem(
+      localStorage.setItem(
         "refreshToken",
         `Bearer ${response.data.refreshToken}`
       );
