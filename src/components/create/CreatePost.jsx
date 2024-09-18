@@ -10,7 +10,7 @@ import Quill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 const Image = styled("img")({
   width: "100%",
-  height: "60vh",
+  height: "55vh",
   objectFit: "cover",
 });
 const Container = styled(Box)(({ theme }) => ({
