@@ -58,9 +58,7 @@ const Post = ({ post }) => {
       <Heading>{addEllipsis(post.title, 20)}</Heading>
       <Text>Author: {post.username}</Text>
       <Details>
-        <div style={{ overflow: "hidden" }}>
           {addEllipsis(post.description, 150)}
-        </div>
       </Details>
     </Container>
   );
