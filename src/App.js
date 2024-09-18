@@ -49,7 +49,7 @@ function App() {
               />
               <Route
                 path="/about"
-                element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+                element={<PrivateRoute isAuthenticated={true} />}
               >
                 <Route path="/about" element={<About />} />
               </Route>
