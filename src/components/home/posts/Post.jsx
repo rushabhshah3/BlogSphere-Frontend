@@ -48,6 +48,7 @@ const Post = ({ post }) => {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = str;
     const plainText = tempDiv.innerText || tempDiv.textContent;
+    console.log("Plain Text",plainText);
     return str.length > limit ? plainText.substring(0, limit) + "..." : str;
   };
 
