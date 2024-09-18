@@ -25,8 +25,10 @@ const PrivateRoute = ({ isAuthenticated, ...props }) => {
       <Header />
     </>
   ) : (
-    {localStorage.clear()}
-    <Navigate replace to="/login" />
+    <>
+      {localStorage.clear()}
+      <Navigate replace={true} to="/login" />
+    </>
   );
 };
 function App() {
