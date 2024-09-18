@@ -55,7 +55,7 @@ function App() {
               </Route>
                <Route
                 path="/"
-                element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+                element={<PrivateRoute isAuthenticated={true} />}
               >
                 <Route path="/" element={<Home />} />
               </Route>   
