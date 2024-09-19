@@ -72,6 +72,7 @@ const Update = () => {
   };
   const handlePostDescription = (e) => {
     postDescValue = e;
+    post.description = postDescValue;
   };
   const url = post.picture
     ? post.picture
@@ -101,7 +102,6 @@ const Update = () => {
     post.username = account.username;
   }, [file, account.username, post, searchParams]);
   const updateBlogPost = async () => {
-    post.description = postDescValue;
     try {
       let response = await API.updatePost(post);
       if (response.isSuccess) {
