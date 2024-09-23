@@ -62,6 +62,7 @@ const CreatePost = () => {
         { indent: "-1" },
         { indent: "+1" },
       ],
+      [image],
       ["link"],
       ["clean"],
     ],
