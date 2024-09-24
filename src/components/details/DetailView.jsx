@@ -110,7 +110,7 @@ const DetailView = () => {
         </Typography>
       </Author>
 
-      <div>{post.description}</div>
+      <div dangerouslySetInnerHTML={{ __html: post.description }}></div>
       <Comments post={post} />
     </Container>
   );
