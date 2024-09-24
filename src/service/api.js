@@ -64,7 +64,7 @@ const processError = async (error) => {
     // Request made and server responded with a status code
     // that falls out of the range of 2xx
     if (error.response.data.clearToken) {
-      sessionStorage.clear();
+      localStorage.clear();
       alert("Please login again!");
       window.location.href = "/";
     }
