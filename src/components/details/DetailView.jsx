@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect, useContext } from "react";
 
 import { Box, Typography, styled } from "@mui/material";
-import { Delete, Edit } from "@mui/icons-material";
+// import { Delete, Edit } from "@mui/icons-material";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { API } from "../../service/api";
@@ -61,7 +61,7 @@ const DetailView = () => {
     "https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80";
 
   const [post, setPost] = useState({});
-  const { account } = useContext(DataContext);
+  // const { account } = useContext(DataContext);
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -76,10 +76,10 @@ const DetailView = () => {
     fetchData();
   }, [id]);
 
-  const deleteBlog = async () => {
-    await API.deletePost(post._id);
-    navigate("/");
-  };
+  // const deleteBlog = async () => {
+  //   await API.deletePost(post._id);
+  //   navigate("/");
+  // };
 
   return (
     <Container>
