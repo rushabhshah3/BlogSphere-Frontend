@@ -84,7 +84,7 @@ const DetailView = () => {
   return (
     <Container>
       <Image src={post.picture || url} alt="post" />
-      <Box style={{ float: "right" }}>
+{/*       <Box style={{ float: "right" }}>
         {account.username === post.username && (
           <>
             <Link to={`/update/${post._id}`}>
@@ -93,7 +93,7 @@ const DetailView = () => {
             <DeleteIcon onClick={() => deleteBlog()} color="error" />
           </>
         )}
-      </Box>
+      </Box> */}
       <Heading>{post.title}</Heading>
 
       <Author>
@@ -110,7 +110,7 @@ const DetailView = () => {
         </Typography>
       </Author>
 
-      <div dangerouslySetInnerHTML={{ __html: post.description }}></div>
+      <div>{post.description}</div>
       <Comments post={post} />
     </Container>
   );
