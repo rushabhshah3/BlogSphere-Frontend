@@ -26,19 +26,19 @@ const Image = styled("img")({
   maxHeight: "35rem",
 });
 
-const EditIcon = styled(Edit)`
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid #878787;
-  border-radius: 10px;
-`;
+// const EditIcon = styled(Edit)`
+//   margin: 5px;
+//   padding: 5px;
+//   border: 1px solid #878787;
+//   border-radius: 10px;
+// `;
 
-const DeleteIcon = styled(Delete)`
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid #878787;
-  border-radius: 10px;
-`;
+// const DeleteIcon = styled(Delete)`
+//   margin: 5px;
+//   padding: 5px;
+//   border: 1px solid #878787;
+//   border-radius: 10px;
+// `;
 
 const Heading = styled(Typography)`
   font-size: 38px;
