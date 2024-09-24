@@ -70,7 +70,7 @@ function App() {
               </Route>
               <Route
                 path="/details/:id"
-                element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+                element={<PrivateRoute isAuthenticated={true} />}
               >
                 <Route path="/details/:id" element={<DetailView />} />
               </Route>
