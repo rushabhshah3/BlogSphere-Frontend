@@ -53,7 +53,7 @@ const Comments = ({ post }) => {
       } catch (error) {}
     };
     getData();
-  }, [toggle, post]);
+  }, [toggle, post, params.id]);
 
   const handleChange = (e) => {
     setComment({
