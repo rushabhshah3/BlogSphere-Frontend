@@ -5,7 +5,7 @@ import { Box, TextareaAutosize, Button, styled } from "@mui/material";
 import { DataContext } from "../../../context/DataProvider";
 
 import { API } from "../../../service/api";
-
+import { useParams } from "react-router-dom";
 //components
 import Comment from "./Comment";
 
@@ -34,6 +34,7 @@ const initialValue = {
 };
 
 const Comments = ({ post }) => {
+  const params = useParams();
   const url = "https://static.thenounproject.com/png/12017-200.png";
 
   const [comment, setComment] = useState(initialValue);
@@ -45,7 +46,7 @@ const Comments = ({ post }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await API.getAllComments(post._id);
+        const response = await API.getAllComments(params.id);
         if (response.isSuccess) {
           setComments(response.data);
         }
